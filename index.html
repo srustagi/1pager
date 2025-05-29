@@ -171,30 +171,68 @@
             this.style.transform = `rotate(${dialRotation}deg)`;
         });
 
-        // Slider interactions
+        // Slider interactions with mobile support
         document.querySelectorAll('.slider-thumb').forEach(thumb => {
             let isDragging = false;
             
+            // Mouse events
             thumb.addEventListener('mousedown', function(e) {
+                e.preventDefault();
                 isDragging = true;
-                document.addEventListener('mousemove', handleDrag);
+                document.addEventListener('mousemove', handleMouseDrag);
                 document.addEventListener('mouseup', stopDrag);
             });
 
-            function handleDrag(e) {
+            // Touch events for mobile
+            thumb.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                isDragging = true;
+                document.addEventListener('touchmove', handleTouchDrag, { passive: false });
+                document.addEventListener('touchend', stopDrag);
+            });
+
+            function handleMouseDrag(e) {
                 if (!isDragging) return;
+                e.preventDefault();
+                updateSliderPosition(e.clientX);
+            }
+
+            function handleTouchDrag(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const touch = e.touches[0];
+                updateSliderPosition(touch.clientX);
+            }
+
+            function updateSliderPosition(clientX) {
                 const track = thumb.parentElement;
                 const rect = track.getBoundingClientRect();
-                let position = ((e.clientX - rect.left) / rect.width) * 100;
+                let position = ((clientX - rect.left) / rect.width) * 100;
                 position = Math.max(0, Math.min(100, position));
                 thumb.style.left = position + '%';
             }
 
             function stopDrag() {
                 isDragging = false;
-                document.removeEventListener('mousemove', handleDrag);
+                document.removeEventListener('mousemove', handleMouseDrag);
                 document.removeEventListener('mouseup', stopDrag);
+                document.removeEventListener('touchmove', handleTouchDrag);
+                document.removeEventListener('touchend', stopDrag);
             }
+
+            // Also allow clicking/tapping on the track to move the slider
+            const track = thumb.parentElement;
+            track.addEventListener('click', function(e) {
+                if (e.target === thumb) return; // Don't trigger if clicking the thumb itself
+                updateSliderPosition(e.clientX);
+            });
+
+            track.addEventListener('touchstart', function(e) {
+                if (e.target === thumb) return; // Don't trigger if touching the thumb itself
+                e.preventDefault();
+                const touch = e.touches[0];
+                updateSliderPosition(touch.clientX);
+            });
         });
 
         // Info block interactions
