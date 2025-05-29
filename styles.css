@@ -829,7 +829,9 @@ a:has(> .info-block):visited:hover {
 
     .controls {
         gap: 75px;
-        margin: 24px 0 16px 0;
+        margin: 0 auto;
+        margin-top: 24px;
+        margin-bottom: 44px;
     }
 
     .power-switch,
