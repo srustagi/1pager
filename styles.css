@@ -780,16 +780,24 @@ a:visited:hover, .highlight a:visited:hover {
 }
 
 /* Remove underlines for specific link containers */
-a:has(> li),
+li.FULL a {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+li.FULL a:hover,
+li.FULL a:visited,
+li.FULL a:visited:hover {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
 a:has(> .info-block) {
     text-decoration: none;
 }
 
-a:has(> li):hover,
 a:has(> .info-block):hover,
-a:has(> li):visited,
 a:has(> .info-block):visited,
-a:has(> li):visited:hover,
 a:has(> .info-block):visited:hover {
     text-decoration: none;
 }
