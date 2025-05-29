@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Shivansh Rustagi</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shivansh Rustagi - Full Stack Engineer">
+    <meta property="og:description" content="SF-based full stack engineer. ex-YC founder, lover of mowgli and his GT-R.">
+    <meta property="og:image" content="insight.jpg">
+    <meta property="og:url" content="https://shivan.sh">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shivansh Rustagi">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shivansh Rustagi - Full Stack Engineer">
+    <meta name="twitter:description" content="Full stack contract engineer working with seed stage startups. Currently building voice agents at OpenCall.ai (YC W24).">
+    <meta name="twitter:image" content="insight.jpg">
+    <meta name="twitter:creator" content="@r32tagi">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="SF-based full stack engineer. ex-YC founder, lover of mowgli and his GT-R.">
+    <meta name="author" content="Shivansh Rustagi">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="device">
+        <div class="header">
+            <div class="avatar-container">
+                <img src="avatar.jpg" alt="Shivansh Rustagi" class="avatar">
+            </div>
+            <div class="name-container">
+                <h1 class="name">Shivansh Rustagi</h1>
+                <div class="power-indicator"></div>
+            </div>
+        </div>
+        
+        <div class="markdown-grid">
+            <a href="https://www.linkedin.com/in/srustagi/" target="_blank"><div class="info-block primary">⚡ fullstack eng</div></a>
+            <div class="info-block accent">📍 sf, ca</div>
+        </div>
+        
+        <div class="content">
+            <ul class="markdown-list">
+                <a href="https://www.linkedin.com/in/srustagi/" target="_blank"><li>💼 full stack contract eng @ seed stage startups</li></a>
+                <a href="https://opencall.ai" target="_blank"><li>🤖 currently messing around with voice agents @ <span class="highlight">opencall.ai (yc w24)</span></li></a>
+                <li>😅 building a way to answer "what are you building" at sf parties as someone who is seeking genuine human connection and not a networking opportunity</li>
+                <li>🧠 learning about <span class="highlight">evals</span> and <span class="highlight">RL</span> with LLMs!</li>
+                <li>🚀 prev <span class="highlight">cto @ <a href="https://www.ycombinator.com/companies/interlock" target="_blank">interlock yc (w23)</a></span>, computer vision intern @ <span class="highlight"><a href="https://onepeloton.com/guide" target="_blank">peloton guide</a></span></li>
+                <a href="https://open.spotify.com/user/shivanshrustagi" target="_blank"><li>🎧 listening to plenty o' <span class="highlight">music</span></li></a>
+                <a href="https://x.com/r32tagi" target="_blank"><li>💬 talk to me about <span class="highlight">MMA</span>, <span class="highlight">EDM</span> + <span class="highlight">JDM vehicles</span>, or my girlfriend's dog <span class="highlight">mowgli</span></li></a>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            these controls don't do anything, they were just fun to make.
+        </div>
+
+        <div class="controls">
+            <div class="power-switch">
+                <div class="switch-housing" id="powerSwitch">
+                    <div class="switch-toggle"></div>
+                </div>
+                <div class="switch-labels">
+                    <div>◉</div>
+                    <div>◯</div>
+                </div>
+            </div>
+            
+            <div class="button-grid">
+                <div class="control-button" data-preset="1">1</div>
+                <div class="control-button" data-preset="2">2</div>
+                <div class="control-button" data-preset="3">3</div>
+                <div class="control-button" data-preset="4">4</div>
+                <div class="control-button" data-preset="5">5</div>
+                <div class="control-button" data-preset="6">6</div>
+                <div class="control-button" data-preset="7">7</div>
+                <div class="control-button" data-preset="8">8</div>
+                <div class="control-button" data-preset="9">9</div>
+            </div>
+            
+            <div class="dial-group">
+                <div class="large-dial" id="mainDial"></div>
+                <div class="dial-ticks">
+                    <div class="tick"></div>
+                    <div class="tick major"></div>
+                    <div class="tick"></div>
+                    <div class="tick major"></div>
+                    <div class="tick"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="function-panel">
+            <div class="function-row">
+                <div class="function-label">♫ vol</div>
+                <div class="slider-track">
+                    <div class="slider-thumb" data-slider="volume"></div>
+                </div>
+                <div class="function-label">⚖ bal</div>
+                <div class="slider-track">
+                    <div class="slider-thumb" data-slider="balance"></div>
+                </div>
+            </div>
+            <div class="function-row">
+                <div class="function-label">◐ bass</div>
+                <div class="slider-track">
+                    <div class="slider-thumb" data-slider="bass"></div>
+                </div>
+                <div class="function-label">◑ treb</div>
+                <div class="slider-track">
+                    <div class="slider-thumb" data-slider="treble"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-lights">
+            <div class="status-light active"></div>
+            <div class="status-light green"></div>
+            <div class="status-light"></div>
+            <div class="status-light"></div>
+        </div>
+        
+        <div class="image-section">
+            <img src="insight.jpg" alt="R32" class="main-image">
+            <div class="image-caption">~insight.jpg</div>
+        </div>
+
+        <div class="brand">© shiv rustagi 2025</div>
+    </div>
+
+    <script>
+        // Control button interactions
+        document.querySelectorAll('.control-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active from all buttons
+                document.querySelectorAll('.control-button').forEach(b => b.classList.remove('active'));
+                // Add active to clicked button
+                this.classList.add('active');
+                // Add pulse animation
+                this.classList.add('button-pulse');
+                setTimeout(() => this.classList.remove('button-pulse'), 300);
+            });
+        });
+
+        // Power switch toggle for dark mode
+        document.getElementById('powerSwitch').addEventListener('click', function() {
+            this.classList.toggle('on');
+            
+            // Toggle dark mode
+            if (this.classList.contains('on')) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        });
+
+        // Dial rotation
+        let dialRotation = 0;
+        document.getElementById('mainDial').addEventListener('click', function() {
+            dialRotation += 45;
+            this.style.transform = `rotate(${dialRotation}deg)`;
+        });
+
+        // Slider interactions
+        document.querySelectorAll('.slider-thumb').forEach(thumb => {
+            let isDragging = false;
+            
+            thumb.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                document.addEventListener('mousemove', handleDrag);
+                document.addEventListener('mouseup', stopDrag);
+            });
+
+            function handleDrag(e) {
+                if (!isDragging) return;
+                const track = thumb.parentElement;
+                const rect = track.getBoundingClientRect();
+                let position = ((e.clientX - rect.left) / rect.width) * 100;
+                position = Math.max(0, Math.min(100, position));
+                thumb.style.left = position + '%';
+            }
+
+            function stopDrag() {
+                isDragging = false;
+                document.removeEventListener('mousemove', handleDrag);
+                document.removeEventListener('mouseup', stopDrag);
+            }
+        });
+
+        // Info block interactions
+        document.querySelectorAll('.info-block').forEach(block => {
+            block.addEventListener('click', function() {
+                this.classList.add('button-pulse');
+                setTimeout(() => this.classList.remove('button-pulse'), 300);
+            });
+        });
+
+        // List item interactions
+        document.querySelectorAll('.markdown-list li').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.background = '#f0f8ff';
+                setTimeout(() => this.style.background = '', 1000);
+            });
+        });
+    </script>
+</body>
+</html> 
